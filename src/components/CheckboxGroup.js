@@ -2,10 +2,10 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import TextError from './TextError';
 
-const RadioButtons = (props) => {
-  const { label, name, options, ...rest } = props;
+const CheckboxGroup = (props) => {
+  const { name, label, options, ...rest } = props;
   return (
-    <div className="form-control">
+    <div className="form-group">
       <label>{label}</label>
       <Field name={name}>
         {({ field }) => {
@@ -13,12 +13,12 @@ const RadioButtons = (props) => {
             return (
               <React.Fragment key={option.key}>
                 <input
-                  type="radio"
+                  type="checkbox"
                   id={option.value}
                   {...field}
                   {...rest}
                   value={option.value}
-                  checked={field.value === option.value}
+                  checked={field.value.includes(option.value)}
                 />
                 <label htmlFor={option.value}>{option.key}</label>
               </React.Fragment>
@@ -31,4 +31,4 @@ const RadioButtons = (props) => {
   );
 };
 
-export default RadioButtons;
+export default CheckboxGroup;
