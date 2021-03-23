@@ -12,9 +12,6 @@ const ChakraInput = (props) => {
   return (
     <Field name={name}>
       {({ field, form }) => {
-        {
-          /* console.log(form.errors[name])  check if the has an error*/
-        }
         return (
           <FormControl isInvalid={form.errors[name] && form.touched[name]}>
             <FormLabel htmlFor={name}>{label}</FormLabel>

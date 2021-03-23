@@ -29,25 +29,22 @@ const LoginForm = () => {
       onSubmit={onSubmit}
     >
       {(formik) => {
-        {
-          /* console.log(formik); */
-        }
         return (
           <Form>
             <FormikControl
-              control="chakrainput"
+              control="chakraInput"
               type="email"
               name="email"
               label="Email"
             />
             <FormikControl
-              control="chakrainput"
+              control="chakraInput"
               type="password"
               name="password"
               label="Password"
             />
             <FormikControl
-              control="chakrainput"
+              control="chakraInput"
               name="chakra"
               label="Custom chakra input"
             />

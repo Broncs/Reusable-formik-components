@@ -4,11 +4,31 @@ import FormikControl from './FormikControl';
 import { Button } from '@chakra-ui/react';
 
 const ChakraExemples = () => {
+  const chakraSelectOptions = [
+    {
+      key: 'Select an Option',
+      value: '',
+    },
+    {
+      key: 'Option 1',
+      value: 'option1',
+    },
+    {
+      key: 'Option 2',
+      value: 'option2',
+    },
+    {
+      key: 'Option 3',
+      value: 'option3',
+    },
+  ];
+
   const initialValues = {
     email: '',
     password: '',
     chakra: '',
     chakratextarea: '',
+    chakraSelectOption: '',
   };
 
   const validationSchema = Yup.object({
@@ -16,6 +36,7 @@ const ChakraExemples = () => {
     password: Yup.string().required('Required'),
     chakra: Yup.string().required('Required'),
     chakratextarea: Yup.string().required('Required'),
+    chakraSelectOption: Yup.string().required('Required'),
   });
   const onSubmit = (values, onSubmition) => {
     setTimeout(() => {
@@ -31,32 +52,35 @@ const ChakraExemples = () => {
       onSubmit={onSubmit}
     >
       {(formik) => {
-        {
-          /* console.log(formik); */
-        }
         return (
           <Form>
             <FormikControl
-              control="chakrainput"
+              control="chakraInput"
               type="email"
               name="email"
               label="Email"
             />
             <FormikControl
-              control="chakrainput"
+              control="chakraInput"
               type="password"
               name="password"
               label="Password"
             />
             <FormikControl
-              control="chakrainput"
+              control="chakraInput"
               name="chakra"
               label="Custom chakra input"
             />
             <FormikControl
-              control="chakratextarea"
+              control="chakraTextarea"
               name="chakratextarea"
               label="Custom chakra textarea"
+            />
+            <FormikControl
+              control="chakraSelect"
+              name="chakraSelectOption"
+              label="pick one"
+              options={chakraSelectOptions}
             />
             <Button
               type="submit"
