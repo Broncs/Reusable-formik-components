@@ -56,6 +56,7 @@ const FormikContainer = () => {
     selectOption: '',
     radioOption: '',
     checkboxOption: [],
+    birthDate: null,
   };
 
   const valitationSchema = Yup.object({
@@ -64,9 +65,14 @@ const FormikContainer = () => {
     selectOption: Yup.string().required('Required'),
     radioOption: Yup.string().required('Required'),
     checkboxOption: Yup.array().min(1, 'field must have at least 1 items'),
+    birthDate: Yup.date().required('Required').nullable(),
   });
   const onSubmit = (values) => {
-    console.log('console.log', values);
+    console.log('data values', values);
+    // const loaded = JSON.parse(JSON.stringify(values));
+    // console.log(typeof new Date(loaded.birthDate));
+    //If you tried to  load it from somewhere else , you're application will break
+    //  you need to add a  date parser to it , before use it
   };
   return (
     <div>
@@ -106,6 +112,11 @@ const FormikContainer = () => {
                 label="Pick options"
                 name="checkboxOption"
                 options={checkboxOptions}
+              />
+              <FormikControl
+                control="date"
+                label="Pick a date"
+                name="birthDate"
               />
 
               <button type="submit">Submit</button>
