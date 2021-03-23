@@ -7,9 +7,9 @@ import RegistrationForm from './components/RegistrationForm';
 function App() {
   return (
     <div className="App">
-      <EnrollmentForm />
+      {/* <EnrollmentForm /> */}
       {/* <RegistrationForm /> */}
-      {/* <LoginForm /> */}
+      <LoginForm />
       {/* <FormikContainer /> */}
     </div>
   );
