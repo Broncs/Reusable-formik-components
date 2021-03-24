@@ -1,5 +1,6 @@
 import React from 'react';
 import ChakraInput from './ChakraInput';
+import ChakraRadio from './ChakraRadio';
 import ChakraSelect from './ChakraSelect';
 import ChakraTextarea from './ChakraTextarea';
 import CheckboxGroup from './CheckboxGroup';
@@ -30,6 +31,8 @@ const FormikControl = (props) => {
       return <ChakraTextarea {...rest} />;
     case 'chakraSelect':
       return <ChakraSelect {...rest} />;
+    case 'chakraRadio':
+      return <ChakraRadio {...rest} />;
     default:
       return null;
   }

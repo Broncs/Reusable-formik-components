@@ -40,3 +40,7 @@ select {
 .error {
   color: red;
 }
+
+form {
+  width: 500px;
+}

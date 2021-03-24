@@ -4,6 +4,20 @@ import FormikControl from './FormikControl';
 import { Button } from '@chakra-ui/react';
 
 const ChakraExemples = () => {
+  const chakraRadioOptions = [
+    {
+      key: 'Option 1',
+      value: 'option1',
+    },
+    {
+      key: 'Option 2',
+      value: 'option2',
+    },
+    {
+      key: 'Option 3',
+      value: 'option3',
+    },
+  ];
   const chakraSelectOptions = [
     {
       key: 'Select an Option',
@@ -29,6 +43,7 @@ const ChakraExemples = () => {
     chakra: '',
     chakratextarea: '',
     chakraSelectOption: '',
+    chakraRadio: '',
   };
 
   const validationSchema = Yup.object({
@@ -37,6 +52,7 @@ const ChakraExemples = () => {
     chakra: Yup.string().required('Required'),
     chakratextarea: Yup.string().required('Required'),
     chakraSelectOption: Yup.string().required('Required'),
+    chakraRadio: Yup.string().required('Required'),
   });
   const onSubmit = (values, onSubmition) => {
     setTimeout(() => {
@@ -82,12 +98,19 @@ const ChakraExemples = () => {
               label="pick one"
               options={chakraSelectOptions}
             />
+            <FormikControl
+              control="chakraRadio"
+              label="Chakra radio"
+              name="chakraRadio"
+              options={chakraRadioOptions}
+            />
+
             <Button
               type="submit"
               mt={4}
               colorScheme="linkedin"
               isLoading={formik.isSubmitting}
-              disabled={formik.isSubmitting || !formik.isValid}
+              // disabled={formik.isSubmitting || !formik.isValid}
             >
               Submit
             </Button>
