@@ -84,6 +84,9 @@ const ChakraExemples = () => {
             />
             <Button
               type="submit"
+              mt={4}
+              colorScheme="linkedin"
+              isLoading={formik.isSubmitting}
               disabled={formik.isSubmitting || !formik.isValid}
             >
               Submit
